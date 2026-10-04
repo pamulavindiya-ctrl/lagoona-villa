@@ -1,0 +1,672 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    color: #222;
+    background: #fff;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.navbar {
+    max-width: 1300px;
+    margin: auto;
+    padding: 28px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: white;
+    font-size: 27px;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 1px;
+    left: 0;
+    bottom: -7px;
+    background: white;
+    transition: 0.3s;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.menu-toggle {
+    display: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+
+/* HERO */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.38),
+            rgba(0, 0, 0, 0.45)
+        ),
+        url("https://images.unsplash.com/photo-1540541338287-41700207dee6")
+        center/cover;
+}
+
+.hero-content {
+    color: white;
+    max-width: 850px;
+    padding: 20px;
+    animation: fadeUp 1.2s ease;
+}
+
+.small-title {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    letter-spacing: 5px;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-size: clamp(48px, 7vw, 90px);
+    font-weight: normal;
+    line-height: 1.05;
+    margin-bottom: 25px;
+}
+
+.hero p:not(.small-title) {
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 35px;
+}
+
+.button {
+    display: inline-block;
+    padding: 16px 34px;
+    background: #c6a15b;
+    color: white;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.button:hover {
+    background: #a98645;
+    transform: translateY(-3px);
+}
+
+
+/* GENERAL */
+
+.section-title {
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.section-title p {
+    font-family: Arial, sans-serif;
+    color: #b28a46;
+    font-size: 12px;
+    letter-spacing: 4px;
+    margin-bottom: 12px;
+}
+
+.section-title h2 {
+    font-size: 45px;
+    font-weight: normal;
+}
+
+
+/* ABOUT */
+
+.about-section {
+    padding: 120px 8%;
+    background: #f8f6f1;
+}
+
+.about-content {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.about-text h3 {
+    font-size: 38px;
+    font-weight: normal;
+    margin-bottom: 25px;
+}
+
+.about-text p {
+    font-family: Arial, sans-serif;
+    color: #666;
+    line-height: 1.9;
+    margin-bottom: 20px;
+}
+
+.about-image {
+    height: 500px;
+    overflow: hidden;
+}
+
+.about-image img {
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* ROOMS */
+
+.rooms-section {
+    padding: 120px 7%;
+}
+
+.rooms-container {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.room-card {
+    background: white;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: 0.4s;
+}
+
+.room-card:hover {
+    transform: translateY(-10px);
+}
+
+.room-card > img {
+    height: 270px;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.room-card:hover > img {
+    transform: scale(1.05);
+}
+
+.room-content {
+    padding: 30px;
+}
+
+.room-category {
+    font-family: Arial, sans-serif;
+    color: #b28a46;
+    font-size: 11px;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+}
+
+.room-content h3 {
+    font-size: 27px;
+    font-weight: normal;
+    margin-bottom: 15px;
+}
+
+.room-content > p:not(.room-category) {
+    font-family: Arial, sans-serif;
+    color: #777;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.room-bottom {
+    border-top: 1px solid #eee;
+    padding-top: 18px;
+}
+
+.room-bottom span {
+    font-family: Arial, sans-serif;
+    color: #9b753b;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+/* AMENITIES */
+
+.amenities-section {
+    padding: 110px 7%;
+    background: #202b27;
+    color: white;
+    text-align: center;
+}
+
+.amenities-section .section-title p {
+    color: #c6a15b;
+}
+
+.amenities-container {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.amenity {
+    padding: 30px 20px;
+}
+
+.amenity-icon {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.amenity h3 {
+    font-size: 20px;
+    font-weight: normal;
+    margin-bottom: 12px;
+}
+
+.amenity p {
+    font-family: Arial, sans-serif;
+    color: #c5c5c5;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+
+/* GALLERY */
+
+.gallery-section {
+    padding: 120px 6%;
+}
+
+.gallery-container {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.gallery-container img {
+    height: 350px;
+    object-fit: cover;
+    transition: 0.4s;
+}
+
+.gallery-container img:hover {
+    transform: scale(1.02);
+}
+
+
+/* EXPERIENCE */
+
+.experience-section {
+    padding: 120px 7%;
+    background: #f8f6f1;
+    text-align: center;
+}
+
+.experience-container {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.experience-card {
+    background: white;
+    padding: 40px 30px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+}
+
+.stars {
+    color: #c6a15b;
+    font-size: 20px;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.experience-card p {
+    font-family: Arial, sans-serif;
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.experience-card h3 {
+    font-size: 17px;
+    font-weight: normal;
+}
+
+
+/* LOCATION */
+
+.location-section {
+    padding: 120px 7%;
+}
+
+.location-content {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 0.8fr 1.5fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.location-info h3 {
+    font-size: 30px;
+    font-weight: normal;
+    margin-bottom: 25px;
+}
+
+.location-info p {
+    font-family: Arial, sans-serif;
+    color: #666;
+    line-height: 2;
+    margin-bottom: 15px;
+}
+
+.map-container {
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+
+/* BOOKING */
+
+.booking-section {
+    padding: 120px 7%;
+    background: #f8f6f1;
+}
+
+.booking-form {
+    max-width: 850px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.booking-form input,
+.booking-form select,
+.booking-form textarea {
+    width: 100%;
+    padding: 16px;
+    border: 1px solid #ddd;
+    background: white;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    outline: none;
+}
+
+.booking-form input:focus,
+.booking-form select:focus,
+.booking-form textarea:focus {
+    border-color: #b28a46;
+}
+
+.booking-form textarea {
+    grid-column: 1 / -1;
+    height: 130px;
+    resize: vertical;
+}
+
+.booking-form button {
+    grid-column: 1 / -1;
+    padding: 17px;
+    border: none;
+    background: #202b27;
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.booking-form button:hover {
+    background: #b28a46;
+}
+
+
+/* FOOTER */
+
+footer {
+    padding: 55px 20px;
+    text-align: center;
+    background: #161c1a;
+    color: white;
+}
+
+footer h3 {
+    font-size: 25px;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+
+footer p {
+    font-family: Arial, sans-serif;
+    color: #aaa;
+    font-size: 14px;
+}
+
+footer .copyright {
+    margin-top: 25px;
+    font-size: 12px;
+}
+
+
+/* ANIMATION */
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        gap: 0;
+        background: rgba(20, 25, 23, 0.97);
+        text-align: center;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        padding: 17px;
+    }
+
+    .navbar {
+        padding: 22px 6%;
+    }
+
+    .hero {
+        min-height: 90vh;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+    .section-title h2 {
+        font-size: 35px;
+    }
+
+    .about-section,
+    .rooms-section,
+    .gallery-section,
+    .experience-section,
+    .location-section,
+    .booking-section {
+        padding: 80px 20px;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .about-image {
+        height: 350px;
+    }
+
+    .rooms-container {
+        grid-template-columns: 1fr;
+    }
+
+    .amenities-container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .gallery-container {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-container img {
+        height: 280px;
+    }
+
+    .experience-container {
+        grid-template-columns: 1fr;
+    }
+
+    .location-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .booking-form {
+        grid-template-columns: 1fr;
+    }
+
+    .booking-form textarea,
+    .booking-form button {
+        grid-column: auto;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .small-title {
+        font-size: 10px;
+        letter-spacing: 3px;
+    }
+
+    .amenities-container {
+        grid-template-columns: 1fr;
+    }
+
+    .room-card > img {
+        height: 230px;
+    }
+}
+.whatsapp-button {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #25d366;
+    color: white;
+
+    border-radius: 50%;
+
+    text-decoration: none;
+    font-size: 27px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+
+    z-index: 100;
+
+    transition: 0.3s;
+}
+
+.whatsapp-button:hover {
+    transform: scale(1.1);
+}
